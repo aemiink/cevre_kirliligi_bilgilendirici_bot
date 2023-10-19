@@ -1,0 +1,43 @@
+import discord
+import random, os
+from discord.ext import commands
+intents = discord.Intents.default()
+intents.message_content = True
+
+bot = commands.Bot(command_prefix="/", intents=intents)
+youtube_api_key = "AIzaSyCTkL_NJVsNCkYBLh80wgZgGHnxACrAC2o"
+
+@bot.event
+async def on_ready():
+    print(f'Bot {bot.user} kullanıma hazır!, Komutlarınızı yazmak için en başa / sembolünü kullanın!')
+
+@bot.command()
+async def komut_listesi(ctx):
+
+    with open("cevretxt/{komut_listesi.txt}", "r", encoding="utf-8") as f:
+        content = f.read()
+    await ctx.send(content)
+
+@bot.command()
+async def cevre_kirliligi_nedir(ctx):
+    with open("cevretxt/{cevre.txt}", "r", encoding="utf-8") as f:
+        content = f.read()
+    await ctx.send(content)
+
+@bot.command()
+async def cevreyi_kirliligini_nasil_onleriz(ctx):
+    with open("cevretx{temiz.txt}", "r", encoding="utf-8") as f:
+        content = f.read()
+    await ctx.send(content)
+
+@bot.command()
+async def cevre_kirliligi_fotograflari(ctx):
+    kirlicevre_foto = random.choice(os.listdir('kirlicevre'))
+    with open(f'kirlicevre/{kirlicevre_foto}', 'rb') as cevrefoto:
+    #Bu satır, f değişkenindeki verileri bir Discord File nesnesi olarak oluşturur.
+        resim = discord.File(cevrefoto)
+    await ctx.send(file=resim)
+
+
+bot.run("MTE2NDQ0MDY5MzQ2NTQyMzg3Mg.GX-pmj.bAR6BrY77wSbyz-apI2dLwqYCGPoPghBjMGF-E")
+    
