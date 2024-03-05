@@ -5,7 +5,7 @@ intents = discord.Intents.default()
 intents.message_content = True
 
 bot = commands.Bot(command_prefix="/", intents=intents)
-youtube_api_key = "AIzaSyCTkL_NJVsNCkYBLh80wgZgGHnxACrAC2o"
+
 
 @bot.event
 async def on_ready():
@@ -26,7 +26,7 @@ async def cevre_kirliligi_nedir(ctx):
 
 @bot.command()
 async def cevreyi_kirliligini_nasil_onleriz(ctx):
-    with open("cevretx{temiz.txt}", "r", encoding="utf-8") as f:
+    with open("cevretxt/{temiz.txt}", "r", encoding="utf-8") as f:
         content = f.read()
     await ctx.send(content)
 
