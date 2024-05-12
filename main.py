@@ -39,5 +39,5 @@ async def cevre_kirliligi_fotograflari(ctx):
     await ctx.send(file=resim)
 
 
-bot.run("MTE2NDQ0MDY5MzQ2NTQyMzg3Mg.GX-pmj.bAR6BrY77wSbyz-apI2dLwqYCGPoPghBjMGF-E")
+bot.run("DİCORD BOT API")
     
