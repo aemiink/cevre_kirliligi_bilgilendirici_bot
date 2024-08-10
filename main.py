@@ -28,6 +28,7 @@ async def cevre_kirliligi_nedir(ctx):
 async def cevreyi_kirliligini_nasil_onleriz(ctx):
     with open("cevretxt/{temiz.txt}", "r", encoding="utf-8") as f:
         content = f.read()
+    await ctx.send("Selam")   
     await ctx.send(content)
 
 @bot.command()
