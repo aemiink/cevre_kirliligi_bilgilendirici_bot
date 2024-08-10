@@ -31,6 +31,12 @@ async def cevreyi_kirliligini_nasil_onleriz(ctx):
     await ctx.send(content)
 
 @bot.command()
+async def cevreyi_kirliligi_ile_alakli_oyun(ctx):
+    with open("cevretxt/{temiz.txt}", "r", encoding="utf-8") as f:
+        content = f.read()
+    await ctx.send(content)
+
+@bot.command()
 async def cevre_kirliligi_fotograflari(ctx):
     kirlicevre_foto = random.choice(os.listdir('kirlicevre'))
     with open(f'kirlicevre/{kirlicevre_foto}', 'rb') as cevrefoto:
